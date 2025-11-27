@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.9] - 2025-11-26 17:37:09
+
+### Added
+- Netlify deployment configuration (netlify.toml)
+- @netlify/plugin-nextjs as dev dependency for optimized Next.js deployment
+- Node.js version 20 specified in build environment
+
+### Changed
+- Updated next.config.ts with Netlify deployment comments
+
+### Why
+- Ensure proper deployment to Netlify platform
+- Match configuration from example codebases (support-portal and component-demo)
+- Enable Next.js server-side features on Netlify
+- Set consistent Node.js version for builds
+
 ## [0.1.8] - 2025-11-26 17:26:29
 
 ### Added
