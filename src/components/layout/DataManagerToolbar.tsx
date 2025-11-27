@@ -10,7 +10,7 @@ import Image from 'next/image';
 import type { Toast } from 'primereact/toast';
 
 interface DataManagerToolbarProps {
-  toastRef?: React.RefObject<Toast>;
+  toastRef?: React.RefObject<Toast | null>;
   onCaseChange?: (caseItem: CaseItem | null) => void;
 }
 

@@ -20,7 +20,7 @@ import type { CaseItem } from '@/constants/caseList';
 
 interface ClassMemberDataTableProps {
   selectedCase: CaseItem | null;
-  toastRef?: React.RefObject<Toast>;
+  toastRef?: React.RefObject<Toast | null>;
 }
 
 export const ClassMemberDataTable = ({ selectedCase, toastRef }: ClassMemberDataTableProps) => {
