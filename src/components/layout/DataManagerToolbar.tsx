@@ -11,9 +11,10 @@ import type { Toast } from 'primereact/toast';
 
 interface DataManagerToolbarProps {
   toastRef?: React.RefObject<Toast>;
+  onCaseChange?: (caseItem: CaseItem | null) => void;
 }
 
-export const DataManagerToolbar = ({ toastRef }: DataManagerToolbarProps) => {
+export const DataManagerToolbar = ({ toastRef, onCaseChange }: DataManagerToolbarProps) => {
   const { theme, toggleTheme } = useTheme();
   const [selectedCase, setSelectedCase] = useState<CaseItem | null>(null);
 
@@ -49,6 +50,7 @@ export const DataManagerToolbar = ({ toastRef }: DataManagerToolbarProps) => {
         value={selectedCase}
         onChange={(e) => {
           setSelectedCase(e.value);
+          onCaseChange?.(e.value);
           if (e.value && toastRef?.current) {
             toastRef.current.show({
               severity: 'info',

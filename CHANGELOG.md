@@ -5,6 +5,33 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.8] - 2025-11-26 17:26:29
+
+### Added
+- Full CRUD functionality with state-based operations (no API/DB)
+- Edit dialog for single member editing with form validation
+- Delete confirmation dialogs (single and bulk)
+- Bulk edit dialog (placeholder for future implementation)
+- Create new member functionality
+- Case-based data loading - data only shows when case is selected
+- Test data organized by case (5 cases with varying member counts)
+- Toast notifications for all CRUD operations
+- Empty state message when no case is selected
+
+### Changed
+- Data structure reorganized: CASE_DATA_MAP with data for each case (1-5)
+- DataTable now receives selectedCase prop and loads data accordingly
+- Toolbar passes selectedCase to DataTable via callback
+- All operations work on local state (simulating API calls)
+
+### Why
+- Enable full CRUD workflow testing without backend
+- Visualize edit/delete dialogs and user experience
+- Test state management and data flow
+- Ensure data is properly scoped to selected case
+- Prepare foundation for future API integration
+- Allow users to test all functionality locally
+
 ## [0.1.7] - 2025-11-26 17:17:46
 
 ### Added
