@@ -7,8 +7,13 @@ import { useTheme } from '@/providers/ThemeProvider';
 import { dummyCaseList, type CaseItem } from '@/constants/caseList';
 import { useState } from 'react';
 import Image from 'next/image';
+import type { Toast } from 'primereact/toast';
 
-export const DataManagerToolbar = () => {
+interface DataManagerToolbarProps {
+  toastRef?: React.RefObject<Toast>;
+}
+
+export const DataManagerToolbar = ({ toastRef }: DataManagerToolbarProps) => {
   const { theme, toggleTheme } = useTheme();
   const [selectedCase, setSelectedCase] = useState<CaseItem | null>(null);
 
@@ -26,8 +31,9 @@ export const DataManagerToolbar = () => {
         <Image
           src="/icons/CPT-Logo-PNG-24-sticky-x2.png"
           alt="CPT Logo"
-          width={56}
-          height={56}
+          width={120}
+          height={43}
+          style={{ objectFit: 'contain' }}
         />
       </CPTButton>
     </div>
@@ -41,7 +47,17 @@ export const DataManagerToolbar = () => {
       <Dropdown
         id="case-selector"
         value={selectedCase}
-        onChange={(e) => setSelectedCase(e.value)}
+        onChange={(e) => {
+          setSelectedCase(e.value);
+          if (e.value && toastRef?.current) {
+            toastRef.current.show({
+              severity: 'info',
+              summary: 'Case Changed',
+              detail: `You are now viewing case: ${e.value.caseName}`,
+              life: 3000,
+            });
+          }
+        }}
         options={dummyCaseList}
         optionLabel="label"
         placeholder="Select a case"
