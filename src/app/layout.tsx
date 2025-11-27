@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "@/providers";
-import { ThemeToggle } from "@/components/common/ThemeToggle";
 
 // Get the site URL from environment variable or use a default
 // For Netlify, set NEXT_PUBLIC_SITE_URL in environment variables
@@ -81,7 +80,6 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <ThemeToggle />
           {children}
         </Providers>
       </body>

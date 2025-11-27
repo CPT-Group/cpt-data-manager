@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.5] - 2025-11-26 16:52:04
+
+### Changed
+- Removed duplicate sticky theme toggle from root layout (now only in toolbar)
+- Increased toolbar logo size from 32x32 to 56x56 pixels
+- Improved toolbar alignment and centering for all sections (start, center, end)
+
+### Why
+- Eliminate duplicate theme toggle UI element
+- Make logo more prominent and visible in toolbar
+- Ensure proper vertical alignment of all toolbar elements for better visual consistency
+
 ## [0.1.4] - 2025-11-26 16:49:41
 
 ### Added

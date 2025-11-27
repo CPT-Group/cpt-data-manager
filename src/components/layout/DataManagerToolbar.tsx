@@ -17,22 +17,24 @@ export const DataManagerToolbar = () => {
   };
 
   const startContent = (
-    <CPTButton
-      onClick={handleLogoClick}
-      className="p-button-text p-button-plain"
-      aria-label="CPT Logo"
-    >
-      <Image
-        src="/icons/CPT-Logo-PNG-24-sticky-x2.png"
-        alt="CPT Logo"
-        width={32}
-        height={32}
-      />
-    </CPTButton>
+    <div className="flex align-items-center">
+      <CPTButton
+        onClick={handleLogoClick}
+        className="p-button-text p-button-plain"
+        aria-label="CPT Logo"
+      >
+        <Image
+          src="/icons/CPT-Logo-PNG-24-sticky-x2.png"
+          alt="CPT Logo"
+          width={56}
+          height={56}
+        />
+      </CPTButton>
+    </div>
   );
 
   const centerContent = (
-    <div className="flex align-items-center gap-3">
+    <div className="flex align-items-center justify-content-center gap-3">
       <label htmlFor="case-selector" className="font-semibold">
         Case:
       </label>
@@ -49,19 +51,21 @@ export const DataManagerToolbar = () => {
   );
 
   const endContent = (
-    <CPTButton
-      icon={theme === 'light' ? 'pi pi-sun' : 'pi pi-moon'}
-      onClick={toggleTheme}
-      className="p-button-rounded p-button-text"
-      tooltip={theme === 'light' ? 'Switch to Dark Theme' : 'Switch to Light Theme'}
-      tooltipOptions={{ position: 'bottom' }}
-      aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
-      style={{
-        width: '3rem',
-        height: '3rem',
-        fontSize: '1.5rem',
-      }}
-    />
+    <div className="flex align-items-center">
+      <CPTButton
+        icon={theme === 'light' ? 'pi pi-sun' : 'pi pi-moon'}
+        onClick={toggleTheme}
+        className="p-button-rounded p-button-text"
+        tooltip={theme === 'light' ? 'Switch to Dark Theme' : 'Switch to Light Theme'}
+        tooltipOptions={{ position: 'bottom' }}
+        aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
+        style={{
+          width: '3rem',
+          height: '3rem',
+          fontSize: '1.5rem',
+        }}
+      />
+    </div>
   );
 
   return <Toolbar start={startContent} center={centerContent} end={endContent} />;
