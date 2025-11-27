@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.7] - 2025-11-26 17:17:46
+
+### Added
+- ClassMemberDataTable component with PrimeReact DataTable
+- Selection column with checkboxes for multi-select functionality
+- Actions column with edit/delete buttons for individual rows
+- Data columns: Name, Email, Phone, Address, City, State, Zip Code, SSN, Date of Birth
+- Pagination (10 rows per page, options: 5, 10, 25, 50)
+- Global search/filter functionality
+- Sortable columns
+- Export to CSV functionality
+- Bulk action toolbar buttons (Edit, Delete) - disabled when no selection
+- TEST_DATA.ts with 10 sample class members for testing
+- Toolbar with bulk actions and export button
+
+### Why
+- Create foundation for class member data visualization and management
+- Enable multi-select for future bulk operations (edit/delete)
+- Provide individual row actions (edit/delete buttons) that only affect that row
+- Set up bulk action buttons in toolbar to prevent accidental bulk operations
+- Establish data structure and test data for incremental development
+- Follow PrimeReact DataTable patterns from example codebase
+
 ## [0.1.6] - 2025-11-26 16:57:31
 
 ### Added

@@ -37,9 +37,54 @@ CPT Data Manager is an application to help visualize and edit data for class mem
 2. User clicks "Get Started" → navigates to `/data-manager`
 3. User sees toolbar with case selector and theme toggle
 4. User can select case from dropdown to load data set
+5. User sees DataTable with class member data
+6. User can select multiple rows for bulk operations
+7. User can edit/delete individual rows via action buttons
+8. User can perform bulk edit/delete via toolbar buttons
+
+## DataTable Component
+
+### Phase 1 - Basic Setup (Current)
+- **Selection Column**: Checkboxes for multi-select (first column)
+- **Action Column**: Edit/Delete buttons per row (last column)
+- **Data Columns**: Name, Email, Phone, Address, City, State, Zip Code, SSN, Date of Birth
+- **Features**:
+  - Pagination (10 rows per page, options: 5, 10, 25, 50)
+  - Global search/filter
+  - Sortable columns
+  - Export to CSV
+  - Bulk action buttons in toolbar (Edit, Delete) - disabled when no selection
+- **Test Data**: TEST_DATA.ts with 10 sample class members
+
+### Phase 2 - CRUD Operations (Future)
+- Edit dialog for single row editing
+- Bulk edit dialog for multiple rows
+- Delete confirmation dialogs (single and bulk)
+- Create new member functionality
+- Form validation
+- Toast notifications for operations
+
+### Data Structure
+```typescript
+interface ClassMember {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+  city: string;
+  state: string;
+  zipCode: string;
+  ssn: string;
+  dateOfBirth: string;
+  caseId: number;
+}
+```
 
 ## Notes
 - Theme toggle currently sticky on top-left for home page
 - Theme toggle will be moved to toolbar end section for data-manager page
 - All styling comes from PrimeReact theme - no custom colors
+- Individual row actions only affect that specific row
+- Bulk actions in toolbar only work on selected rows (prevents accidental bulk operations)
 
