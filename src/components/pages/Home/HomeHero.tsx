@@ -1,11 +1,17 @@
 'use client';
 
 import { CPTButton } from '@cpt-group/cpt-prime-react';
+import { useRouter } from 'next/navigation';
+import { useTransition } from 'react';
 
 export const HomeHero = () => {
-  const handleDummyAction = () => {
-    // Dummy action for now
-    console.log('Dummy button clicked');
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+
+  const handleGetStarted = () => {
+    startTransition(() => {
+      router.push('/data-manager');
+    });
   };
 
   return (
@@ -21,7 +27,8 @@ export const HomeHero = () => {
             icon="pi pi-arrow-right"
             iconPos="right"
             size="large"
-            onClick={handleDummyAction}
+            onClick={handleGetStarted}
+            loading={isPending}
             className="p-button-primary"
           />
         </div>

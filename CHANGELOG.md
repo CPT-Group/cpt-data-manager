@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.4] - 2025-11-26 16:49:41
+
+### Added
+- Data manager route (`/data-manager`) with toolbar header
+- DataManagerToolbar component with logo button, case selector dropdown, and theme toggle
+- Dummy case list data structure for case selection
+- Complete Next.js metadata configuration (OpenGraph, Twitter, icons, robots)
+- Icon images copied from support portal (apple-icon, icon, opengraph-image, twitter-image)
+- Updated root layout with comprehensive metadata matching example codebases
+
+### Why
+- Create main application page structure with professional header/toolbar
+- Enable case selection functionality for data loading
+- Provide proper SEO and social media sharing metadata
+- Ensure Next.js automatically detects and serves icons and images correctly
+- Match metadata patterns from support portal and component showcase for consistency
+
 ## [0.1.3] - 2025-11-26 16:19:28
 
 ### Added
